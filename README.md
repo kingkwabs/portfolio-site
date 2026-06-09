@@ -2,6 +2,8 @@
 
 A Frontify-inspired portfolio site for Kwabena Appiah, built with React, TypeScript, and Vite.
 
+Live site: https://kingkwabs.github.io/portfolio-site/
+
 ## Highlights
 
 - Interactive project network for Field AI, IDC Energy, CivSim, PLANETOIDS, and McDiver

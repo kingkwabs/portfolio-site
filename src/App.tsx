@@ -66,7 +66,10 @@ type SkillReelCard = {
   icon: typeof BrainCircuit
 }
 
-const resumeUrl = '/Kwabena-Appiah-Resume-Dec-2025.docx'
+const publicUrl = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`
+
+const resumeUrl = publicUrl('/Kwabena-Appiah-Resume-Dec-2025.docx')
 const githubUrl = 'https://github.com/kingkwabs'
 const linkedinUrl = 'https://www.linkedin.com/in/kwabena-appiah-17b33a244/'
 const emailUrl = 'mailto:koa24@cornell.edu'
@@ -249,7 +252,7 @@ const skillReelCards: SkillReelCard[] = [
     body:
       'I model time windows, priorities, travel constraints, and replanning loops so AI systems can explain why a plan changed.',
     proof: 'FieldAI route planning',
-    image: '/assets/reel/fieldai-planning.png',
+    image: publicUrl('/assets/reel/fieldai-planning.png'),
     imageAlt: 'FieldAI route planning mobile interface',
     color: 'acid',
     stack: ['Python', 'TypeScript', 'OpenAI API', 'Routing'],
@@ -262,7 +265,7 @@ const skillReelCards: SkillReelCard[] = [
     body:
       'I turn messy operational workflows into structured records, dashboards, and retrieval paths that teams can trust.',
     proof: 'Aurora, QuickBooks, analytics',
-    image: '/assets/reel/node-graph.png',
+    image: publicUrl('/assets/reel/node-graph.png'),
     imageAlt: 'Hand-drawn systems graph used for algorithm planning',
     color: 'green',
     stack: ['PostgreSQL', 'AWS RDS', 'Dashboards', 'APIs'],
@@ -275,7 +278,7 @@ const skillReelCards: SkillReelCard[] = [
     body:
       'I build state spaces, valid-action systems, heuristics, and tests for game-like environments and decision agents.',
     proof: 'CivSim and McDiver',
-    image: '/assets/reel/mcdiver-sprites.png',
+    image: publicUrl('/assets/reel/mcdiver-sprites.png'),
     imageAlt: 'McDiver explorer sprite sheet',
     color: 'cyan',
     stack: ['Java', 'Python', 'Graphs', 'MCTS'],
@@ -288,7 +291,7 @@ const skillReelCards: SkillReelCard[] = [
     body:
       'I care about the moment where code becomes usable: responsive controls, clear feedback, and motion that explains state.',
     proof: 'PLANETOIDS arcade systems',
-    image: '/assets/reel/planetoids-ship.png',
+    image: publicUrl('/assets/reel/planetoids-ship.png'),
     imageAlt: 'PLANETOIDS arcade ship asset',
     color: 'blue',
     stack: ['Animation', 'Collision', 'Vectors', 'UI state'],
@@ -301,7 +304,7 @@ const skillReelCards: SkillReelCard[] = [
     body:
       'I connect engineering detail to product taste: precise scope, useful defaults, readable interfaces, and accountable outcomes.',
     proof: 'Full-stack delivery',
-    image: '/assets/kwabena-linkedin-profile.jpg',
+    image: publicUrl('/assets/kwabena-linkedin-profile.jpg'),
     imageAlt: 'Kwabena Appiah profile portrait',
     color: 'violet',
     stack: ['React', 'Systems thinking', 'UX', 'Shipping'],
@@ -414,7 +417,7 @@ function App() {
             </p>
             <img
               className="profile-photo"
-              src="/assets/kwabena-linkedin-profile.jpg"
+              src={publicUrl('/assets/kwabena-linkedin-profile.jpg')}
               alt="Kwabena Appiah profile portrait"
             />
           </div>
@@ -433,7 +436,7 @@ function App() {
           </div>
           <div className="identity-strip" aria-label="Profile highlights">
             <img
-              src="/assets/cornell-c-logo.svg"
+              src={publicUrl('/assets/cornell-c-logo.svg')}
               alt="Cornell University C logo"
             />
             <div>
