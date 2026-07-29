@@ -77,16 +77,17 @@ const emailUrl = 'mailto:koa24@cornell.edu'
 const projects: Project[] = [
   {
     id: 'field-ai',
-    name: 'Field AI',
-    kicker: 'AI scheduling platform',
+    name: 'FieldAI',
+    kicker: 'Field-sales AI platform',
     summary:
-      'Constraint-aware planning system that ingests tasks from email, calendar, and notifications.',
+      'Pilot-stage iOS and backend system for field-sales routes, goals, visits, void recovery, and manager visibility.',
     detail:
-      'Building an AI-driven route optimization and daily scheduling engine with explainable replanning for time windows, priorities, travel time, and disruptions.',
-    status: 'In progress',
-    impact: 'Autonomous ingestion + explainable planning',
+      'Built the FieldAI field-test runway: SwiftUI iOS app, TypeScript backend, Postgres/pgvector, Clerk beta auth, hosted staging, Daily Field Copilot, and approval-based agent proposals.',
+    status: 'Pilot build',
+    impact: 'Real-user field tests + startup formation',
     color: 'acid',
-    stack: ['Python', 'Node.js', 'TypeScript', 'Express', 'REST APIs'],
+    stack: ['SwiftUI', 'TypeScript', 'Postgres', 'Clerk', 'Render', 'OpenAI API'],
+    href: 'https://github.com/kingkwabs/FieldAI',
     icon: Route,
     node: { x: 49, y: 16 },
   },
@@ -204,6 +205,10 @@ const skills = [
   'TypeScript',
   'SQL',
   'PostgreSQL',
+  'pgvector',
+  'SwiftUI',
+  'Clerk',
+  'Render',
   'AWS',
   'REST APIs',
   'Machine learning',
@@ -247,15 +252,15 @@ const proof = [
 const skillReelCards: SkillReelCard[] = [
   {
     id: 'planning-engines',
-    title: 'AI planning engines',
-    kicker: 'agents + route logic',
+    title: 'Field ops intelligence',
+    kicker: 'routes, goals, copilot',
     body:
-      'I model time windows, priorities, travel constraints, and replanning loops so AI systems can explain why a plan changed.',
-    proof: 'FieldAI route planning',
+      'FieldAI is moving from planning engine to startup product: live routes, goals, visits, void recovery, manager roles, and proposal-only AI grounded in operational evidence.',
+    proof: 'FieldAI pilot build',
     image: publicUrl('/assets/reel/fieldai-planning.png'),
-    imageAlt: 'FieldAI route planning mobile interface',
+    imageAlt: 'FieldAI route planning screen for field-sales reps',
     color: 'acid',
-    stack: ['Python', 'TypeScript', 'OpenAI API', 'Routing'],
+    stack: ['SwiftUI', 'Postgres', 'pgvector', 'Clerk'],
     icon: Route,
   },
   {
@@ -316,8 +321,10 @@ const signalLines = [
   'calendar.event -> task window',
   'email.thread -> structured work order',
   'constraint graph -> route plan',
-  'agent rollout -> explainable decision',
+  'copilot proposal -> reviewed action',
   'postgres row -> operational dashboard',
+  'clerk org -> beta workspace',
+  'field route -> testable workflow',
   'quickbooks event -> transaction state',
 ]
 
