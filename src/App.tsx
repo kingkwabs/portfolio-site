@@ -624,11 +624,20 @@ function SystemsPanel({
   onSelect: (id: string) => void
 }) {
   const now = new Date()
-  const time = now.toLocaleTimeString([], {
+  const easternTimeParts = new Intl.DateTimeFormat('en-US', {
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
-  })
+    timeZone: 'America/New_York',
+    timeZoneName: 'short',
+  }).formatToParts(now)
+  const time = easternTimeParts
+    .filter((part) => part.type !== 'timeZoneName')
+    .map((part) => part.value)
+    .join('')
+    .trim()
+  const timeZoneLabel =
+    easternTimeParts.find((part) => part.type === 'timeZoneName')?.value ?? 'ET'
   const selectedProject =
     projects.find((project) => project.id === selectedId) ?? projects[0]
 
@@ -640,7 +649,9 @@ function SystemsPanel({
         <span>
           Signal console <b>live</b>
         </span>
-        <span>UTC {time}</span>
+        <span>
+          {timeZoneLabel} {time}
+        </span>
       </div>
       <div className="console-canvas">
         <div className="console-orbit" aria-hidden="true">
