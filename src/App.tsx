@@ -453,7 +453,7 @@ function App() {
             <div className="identity-divider" aria-hidden="true" />
             <MapPin aria-hidden="true" size={22} />
             <div>
-              <strong>Ithaca, NY</strong>
+              <strong>Darnestown, MD</strong>
               <span>Available for software and AI roles</span>
             </div>
           </div>
